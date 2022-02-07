@@ -1,0 +1,62 @@
+<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">提案一覧</h2>
+<section class="wrapper">
+    <div class="container">
+        <div class="content">
+        <%= link_to new_image_path do %>
+            <button class="text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 flex items-center shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+            <i class="fas fa-plus-square"></i>
+            　新規作成
+            </button>
+        <% end %>
+        <br>
+        <div class="p-8  bg-white rounded border border-gray-200">
+          <div class="list">
+            <% @images.each do |image| %>
+                <div class="flex overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800" style="margin: 10px 0px;">
+                    <div class="p-4 md:p-4">
+                        <h1 class="text-2xl font-bold text-gray-800 dark:text-white"><%= image.title %></h1>
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400" style="height: 200px;"><%= image.suggestion %></p>
+
+                        <div class="flex mt-2 item-center">
+                            <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-700 fill-current dark:text-gray-300" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                            </svg>
+
+                            <svg class="w-5 h-5 text-gray-500 fill-current" viewBox="0 0 24 24">
+                                <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z"/>
+                            </svg>
+                        </div>
+                        <div class="button">
+                            <%= link_to image_path(image) do %>
+                                <button class="text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 flex items-center shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5"  style="margin: 10px;">
+                                    <i class="fas fa-book-reader"></i>
+                                    　参照
+                                </button>
+                            <% end %>
+
+                            <%= link_to edit_image_path(image) do %>
+                                <button class="text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 flex items-center shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" style="margin: 10px;">
+                                    <i class="fas fa-edit"></i>
+                                    　編集
+                                </button>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+          </div>
+        </div>
+    </div>
+</section>

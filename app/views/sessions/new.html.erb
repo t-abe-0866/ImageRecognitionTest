@@ -1,0 +1,24 @@
+<h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">ログイン</h2>
+<div class="">
+    <div class="p-8 lg:w-1/2 mx-auto">
+        <div class="bg-white rounded py-12 px-4 lg:px-24">
+            <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+                <div class="px-4 py-5 bg-white space-y-2 sm:p-2">
+                    <label for="price" class="block text-gray-700 text-base font-bold mb-2">メールアドレス</label>
+                    <%= f.email_field :email, class: ' appearance-none border pl-3 border-gray-300 shadow-sm focus:shadow-md focus:placeholder-gray-800  transition  rounded-md w-full py-3 text-gray-800 leading-tight focus:outline-none focus:ring-gray-800 focus:shadow-outline' %>
+                </div>
+
+                <div class="px-4 py-5 bg-white space-y-2 sm:p-2">
+                    <label for="price" class="block text-gray-700 text-base font-bold mb-2">パスワード</label>
+                    <%= f.password_field :password, class: ' appearance-none border pl-3 border-gray-300 shadow-sm focus:shadow-md focus:placeholder-gray-800  transition  rounded-md w-full py-3 text-gray-800 leading-tight focus:outline-none focus:ring-gray-800 focus:shadow-outline' %>
+                </div>
+
+                <div class="flex items-center justify-center mt-8">
+                    <%= button_tag :type => "submit", :class =>"text-white py-2 px-4 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" do %>
+                        <i class="fas fa-sign-in-alt"></i>  ログイン
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
