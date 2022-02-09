@@ -1,33 +1,59 @@
-<p id="notice"><%= notice %></p>
+<section class="dark:bg-gray-800 p-8">
+    <div class="container px-6 py-8 mx-auto bg-white ">
+        <div class="items-center lg:flex">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100"><%= @image.title %></h2>
+                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">テスト内容</h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md"><%= @image.suggestion %></p>
+                <h2 class="text-xl font-bold text-gray-800 dark:text-gray-100">テスト結果</h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md"><%= @result %></p>
 
-<% if @image.avatar? %>  <!-- アップロード画像がある場合に実行する -->
-  <canvas id="board" width="460" height="460"></canvas>
-  <canvas id="rectangle" width="100" height="100"></canvas>
+                <div class="flex items-center mt-6 -mx-2">
+                  <%= link_to edit_image_path(@image) do %>
+                      <button class="text-white py-2 px-4 pl-2 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" style="margin: 10px;">
+                          <i class="fas fa-undo-alt"></i>
+                          編集へ
+                      </button>
+                  <% end %>
+                  <%= link_to images_path do %>
+                      <button class="text-white py-2 px-4 pl-2 uppercase rounded bg-indigo-500 hover:bg-indigo-600 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5" style="margin: 10px;">
+                          <i class="fas fa-undo-alt"></i>
+                          一覧へ
+                      </button>
+                  <% end %>
+                </div>
+            </div>
 
-  <script>
-  window.onload = ()=>{
-    // canvas準備
-    const board = document.querySelector("#board");  //getElementById()等でも可。オブジェクトが取れれば良い。
-    const ctx = board.getContext("2d");
+            <div class="mt-8 lg:mt-0 lg:w-1/2">
+                <div class="flex items-center justify-center lg:justify-end">
+                    <div class="max-w-lg">
+                      <% if @image.avatar? %>  <!-- アップロード画像がある場合に実行する -->
+                        <canvas id="board" width="460" height="460"></canvas>
+                        <canvas id="rectangle" width="100" height="100"></canvas>
 
-    // 画像読み込み
-    const chara = new Image();
-    chara.src = '<%= @image.avatar.url %>';  // 画像のURLを指定
+                        <script>
+                        window.onload = ()=>{
+                          // canvas準備
+                          const board = document.querySelector("#board");  //getElementById()等でも可。オブジェクトが取れれば良い。
+                          const ctx = board.getContext("2d");
 
-    chara.onload = () => {
-      ctx.drawImage(chara, 0, 0);
-      // 四角を描く
-      ctx.beginPath();
-      ctx.strokeRect(<%= @result_x %>, <%= @result_y %>, <%= @result_xl %>, <%= @result_yl %>);
-    };
+                          // 画像読み込み
+                          const chara = new Image();
+                          chara.src = '<%= @image.avatar.url %>';  // 画像のURLを指定
 
-  };
-  </script>
-<% end %>
+                          chara.onload = () => {
+                            ctx.drawImage(chara, 0, 0);
+                            // 四角を描く
+                            ctx.beginPath();
+                            ctx.strokeRect(<%= @result_x %>, <%= @result_y %>, <%= @result_xl %>, <%= @result_yl %>);
+                          };
 
-<p><%= @result %></p>
-
-<p><%= @resul1 %></p>
-
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+                        };
+                        </script>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

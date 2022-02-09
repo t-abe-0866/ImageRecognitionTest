@@ -19,13 +19,13 @@
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
             <i class="fas fa-marker fa-2x" style="color:#6366F1;"></i>
-            <h2 class="font-serif text-2xl text-white text-center pl-4">改善提案</h2>
+            <h2 class="font-serif text-2xl text-white text-center pl-4">画像認識テスト</h2>
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <li class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium list-none"><%= link_to '提案一覧', images_path%></li>
-              <li class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium list-none"><%= link_to '提案する', new_image_path%></li>
+              <li class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium list-none"><%= link_to 'テスト一覧', images_path%></li>
+              <li class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium list-none"><%= link_to '新規テスト', new_image_path%></li>
             </div>
           </div>
         </div>
@@ -43,7 +43,6 @@
             </div>
             <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
               <!-- Active: "bg-gray-100", Not Active: "" -->
-              <li class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"><%= link_to 'プロフィール', user_path(current_user) %></li>
               <li class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
             </div>
           </div>
@@ -55,8 +54,8 @@
     <div class="sm:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <li class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><%= link_to '提案一覧', images_path%></li>
-        <li class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><%= link_to '提案する', new_image_path%></li>
+        <li class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><%= link_to 'テスト一覧', images_path%></li>
+        <li class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><%= link_to '新規テスト', new_image_path%></li>
       </div>
     </div>
   </nav>
@@ -81,15 +80,13 @@
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex-shrink-0 flex items-center">
             <i class="fas fa-marker fa-2x" style="color:#6366F1;"></i>
-            <h2 class="font-serif text-2xl text-white text-center pl-4">改善提案</h2>
+            <h2 class="font-serif text-2xl text-white text-center pl-4">画像認識テスト</h2>
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <li class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium list-none"><%= link_to '提案一覧', images_path%></li>
               <li class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium list-none"><%= link_to 'ユーザー登録', signup_path%></li>
               <li class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium list-none"><%= link_to 'ログイン', login_path%></li>
-
             </div>
           </div>
         </div>
@@ -100,7 +97,6 @@
     <div class="sm:hidden" id="mobile-menu">
       <div class="px-2 pt-2 pb-3 space-y-1">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <li class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><%= link_to '提案一覧', images_path%></li>
         <li class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><%= link_to 'ユーザー登録', signup_path%></li>
         <li class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"><%= link_to 'ログイン', login_path%></li>
       </div>

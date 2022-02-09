@@ -20,11 +20,6 @@
                 </div>
 
                 <div class="px-4 py-5 bg-white space-y-2 sm:p-2">
-                    <label for="price" class="block text-gray-700 text-base font-bold mb-2">提案内容</label>
-                    <%= f.text_area :suggestion, class: ' appearance-none border pl-3 border-gray-300 shadow-sm focus:shadow-md focus:placeholder-gray-800  transition  rounded-md w-full h-60 py-3 text-gray-800 leading-tight focus:outline-none focus:ring-gray-800 focus:shadow-outline' %>
-                </div>
-
-                <div class="px-4 py-5 bg-white space-y-2 sm:p-2">
                     <label for="price" class="block text-gray-700 text-base font-bold mb-2">画像で何を行いますか？</label>
                     <%= f.select  :status, [["文字を検出する", 1], ["顔を検出する", 2], ["ラベルを検出する", 3]], class: ' mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
                 </div>
@@ -32,6 +27,11 @@
                 <div class="px-4 py-5 bg-white space-y-2 sm:p-2">
                     <label for="price" class="block text-gray-700 text-base font-bold mb-2">画像選択</label>
                     <%= f.file_field :avatar %>
+                </div>
+
+                <div class="px-4 py-5 bg-white space-y-2 sm:p-2">
+                    <label for="price" class="block text-gray-700 text-base font-bold mb-2">テスト内容</label>
+                    <%= f.text_area :suggestion, class: ' appearance-none border pl-3 border-gray-300 shadow-sm focus:shadow-md focus:placeholder-gray-800  transition  rounded-md w-full h-60 py-3 text-gray-800 leading-tight focus:outline-none focus:ring-gray-800 focus:shadow-outline' %>
                 </div>
 
                 <div class="flex items-center justify-center mt-8">

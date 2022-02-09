@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: %i[ show edit update destroy ]
-  before_action :require_user_logged_in, only: [:show, :edit, :new]
+  before_action :require_user_logged_in
 
   # GET /images or /images.json
   def index
@@ -47,7 +47,7 @@ class ImagesController < ApplicationController
         @image.pos_yl1 = result[8] - result[2]
 
         if @image.save
-          format.html { redirect_to image_url(@image), notice: "Image was successfully created." }
+          format.html { redirect_to image_url(@image), notice: "テストが正常に作成されました。" }
           format.json { render :show, status: :created, location: @image }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -81,14 +81,14 @@ class ImagesController < ApplicationController
         @image.pos_yl1 = result[8] - result[2]
 
         if @image.save
-          format.html { redirect_to image_url(@image), notice: "Image was successfully updated." }
+          format.html { redirect_to image_url(@image), notice: "テストが正常に更新されました。" }
           format.json { render :show, status: :ok, location: @image }
         else
           format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @image.errors, status: :unprocessable_entity }
         end
 
-        format.html { redirect_to image_url(@image), notice: "Image was successfully updated." }
+        format.html { redirect_to image_url(@image), notice: "テストが正常に更新されました。" }
         format.json { render :show, status: :ok, location: @image }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -102,7 +102,7 @@ class ImagesController < ApplicationController
     @image.destroy
 
     respond_to do |format|
-      format.html { redirect_to images_url, notice: "Image was successfully destroyed." }
+      format.html { redirect_to images_url, notice: "画像は正常に破棄されました。" }
       format.json { head :no_content }
     end
   end
